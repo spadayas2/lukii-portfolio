@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fractal Pulse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Space+Grotesk:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/games/fractal-pulse/assets/index-BmuXoR73.js"></script>
+    <link rel="stylesheet" crossorigin href="/games/fractal-pulse/assets/index-DHAK-OuE.css">
+  </head>
+  <body>
+    <canvas id="gl"></canvas>
+
+    <div id="hud">
+      <header class="brand">
+        <h1>Fractal Pulse</h1>
+        <p>Trench run through a fractal corridor</p>
+      </header>
+
+      <div class="controls">
+        <button id="start-btn" type="button">Enter the Trench</button>
+        <label class="file-label">
+          Load Track
+          <input id="audio-file" type="file" accept="audio/*" hidden />
+        </label>
+      </div>
+
+      <ul class="hints">
+        <li><kbd>Mouse</kbd> steer left / right / up / down</li>
+        <li><kbd>Space</kbd> boost + pulse the walls</li>
+        <li><kbd>Scroll</kbd> throttle speed</li>
+      </ul>
+
+      <div class="meters" hidden>
+        <div class="meter">
+          <span>Beat</span>
+          <div class="bar"><i id="beat-bar"></i></div>
+        </div>
+        <div class="meter">
+          <span>Energy</span>
+          <div class="bar"><i id="energy-bar"></i></div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

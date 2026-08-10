@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expedition · Clair Obscur Combat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Syne:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --void: #07060c;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background:
+          radial-gradient(ellipse at 50% 18%, #1a1630 0%, var(--void) 70%),
+          var(--void);
+        font-family: Syne, sans-serif;
+      }
+
+      #game-root {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #game-root canvas {
+        display: block;
+        box-shadow:
+          0 0 0 1px rgba(230, 200, 122, 0.18),
+          0 30px 80px rgba(0, 0, 0, 0.65);
+      }
+    </style>
+    <script type="module" crossorigin src="/games/expedition-combat/assets/index-BfK1YpMV.js"></script>
+  </head>
+  <body>
+    <div id="game-root"></div>
+  </body>
+</html>

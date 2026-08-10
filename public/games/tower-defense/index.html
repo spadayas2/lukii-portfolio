@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Castle Guard — Tower Defense</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/games/tower-defense/assets/index-Bt1J4Mzi.js"></script>
+    <link rel="stylesheet" crossorigin href="/games/tower-defense/assets/index-DYZ62Lc3.css">
+  </head>
+  <body>
+    <div id="app">
+      <header class="top-bar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <h1>Castle Guard</h1>
+        </div>
+        <div class="hud">
+          <div class="stat gold-stat" id="gold-stat">
+            <span class="stat-icon coin-icon" aria-hidden="true"></span>
+            <span id="gold-value">100</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Level</span>
+            <span id="level-value">1</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Lives</span>
+            <span id="lives-value">20</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Wave</span>
+            <span id="wave-progress">0 / 10</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="stage">
+        <canvas id="game" width="960" height="540"></canvas>
+
+        <aside class="sidebar">
+          <section class="panel">
+            <h2>Buy Towers</h2>
+            <p class="hint">Select a tower, then click a green plot beside the path.</p>
+            <div class="shop">
+              <button class="shop-btn" data-tower="archer" type="button">
+                <span class="shop-icon archer-icon"></span>
+                <span class="shop-name">Archer</span>
+                <span class="shop-meta">Fast · Single target</span>
+                <span class="shop-price">50</span>
+              </button>
+              <button class="shop-btn" data-tower="cannon" type="button">
+                <span class="shop-icon cannon-icon"></span>
+                <span class="shop-name">Cannon</span>
+                <span class="shop-meta">Splash · Heavy hit</span>
+                <span class="shop-price">80</span>
+              </button>
+            </div>
+          </section>
+
+          <section class="panel" id="selected-panel">
+            <h2>Selected Tower</h2>
+            <p id="selected-empty" class="hint">Click a placed tower to upgrade it (up to 3 times).</p>
+            <div id="selected-info" class="selected-info hidden">
+              <p id="selected-name" class="selected-name"></p>
+              <p id="selected-stats" class="selected-stats"></p>
+              <button id="upgrade-btn" class="action-btn" type="button">Upgrade</button>
+              <button id="sell-btn" class="action-btn ghost" type="button">Sell</button>
+            </div>
+          </section>
+
+          <section class="panel controls">
+            <button id="start-wave-btn" class="action-btn primary" type="button">
+              Start Wave
+            </button>
+            <button id="next-level-btn" class="action-btn primary hidden" type="button">
+              Next Level
+            </button>
+            <p id="status-text" class="status">Place your defenses, then start the wave.</p>
+          </section>
+        </aside>
+      </main>
+
+      <div id="overlay" class="overlay hidden">
+        <div class="overlay-card">
+          <h2 id="overlay-title">Victory</h2>
+          <p id="overlay-message"></p>
+          <button id="overlay-btn" class="action-btn primary" type="button">Continue</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

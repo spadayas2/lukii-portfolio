@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/games/wildwood-survivors/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wildwood Survivors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/games/wildwood-survivors/assets/index-CvA8OHBt.js"></script>
+    <link rel="stylesheet" crossorigin href="/games/wildwood-survivors/assets/index-hYMqn9VU.css">
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="game"></canvas>
+
+      <div id="hud" class="hidden">
+        <div class="hud-top">
+          <div class="brand-mark">Wildwood</div>
+          <div class="stat-block">
+            <span id="timer">0:00</span>
+            <span class="sep">·</span>
+            <span id="kills">0 kills</span>
+          </div>
+        </div>
+        <div class="bars">
+          <div class="bar hp"><div id="hp-fill"></div></div>
+          <div class="bar xp"><div id="xp-fill"></div></div>
+        </div>
+        <div class="hud-meta">
+          <span id="level">Lv 1</span>
+          <span id="weapons-label">Stick</span>
+          <span id="music-meter" title="Music energy">♪ <i id="energy-pip"></i></span>
+        </div>
+        <div id="voice-hud" class="voice-hud">
+          <span id="voice-status">Intensity</span>
+          <span class="sep">·</span>
+          <span id="voice-heard">quiet rabbits · mid birds · loud bears</span>
+        </div>
+      </div>
+
+      <div id="title-screen" class="overlay">
+        <div class="mist"></div>
+        <div class="title-panel">
+          <p class="eyebrow">Alpine survival</p>
+          <h1>Wildwood<br />Survivors</h1>
+          <p class="lede">
+            Night falls in the mountains. The louder the song, the wilder the
+            woods — soft stretches bring rabbits, builds call birds, and heavy
+            drops wake the bears. Grab a stick, axe, or gun and survive.
+          </p>
+          <div class="music-setup">
+            <label class="file-btn">
+              Drop in a track
+              <input id="music-file" type="file" accept="audio/*" />
+            </label>
+            <span id="track-name" class="track-name">or use the built-in pulse</span>
+          </div>
+          <div class="cta-row">
+            <button id="btn-start" class="btn primary">Enter the woods</button>
+          </div>
+          <p class="hint">WASD to move · Mouse to aim · Intensity spawns the animals</p>
+        </div>
+      </div>
+
+      <div id="levelup-screen" class="overlay hidden">
+        <div class="panel">
+          <h2>You found something</h2>
+          <p class="lede tight">Choose a weapon or upgrade.</p>
+          <div id="levelup-choices" class="choices"></div>
+        </div>
+      </div>
+
+      <div id="gameover-screen" class="overlay hidden">
+        <div class="panel">
+          <h2>Taken by the wild</h2>
+          <p id="final-stats" class="lede"></p>
+          <button id="btn-retry" class="btn primary">Try again</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
