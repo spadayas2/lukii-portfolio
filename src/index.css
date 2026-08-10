@@ -128,12 +128,18 @@ img {
 .spy-eye {
   position: absolute;
   transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+
+.spy-eye[data-state="watching"] {
   opacity: 1;
+  transition: opacity 0.85s ease;
 }
 
 .spy-eye[data-state="leaving"] {
   opacity: 0;
-  transition: opacity 0.18s ease-in;
+  transition: opacity 0.75s ease-in;
 }
 
 .spy-eye__globe {
@@ -170,18 +176,18 @@ img {
     radial-gradient(circle at 50% 18%, #c41e2e 0%, #8f121f 55%, #5c0c14 100%);
   clip-path: inset(0 0 0 0);
   transform-origin: 50% 0%;
-  transition: clip-path 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: clip-path 0.55s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* rest: eyelid covers upper half → pupil reads as a semicircle */
 .spy-eye__lid[data-state="rest"] {
   clip-path: inset(0 0 46% 0);
-  transition: clip-path 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: clip-path 0.65s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .spy-eye__lid[data-state="shut"] {
   clip-path: inset(0 0 0 0);
-  transition: clip-path 0.14s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: clip-path 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ——— Slice intro ——— */
@@ -438,26 +444,6 @@ img {
 
 .hero__brand .mark {
   color: var(--red);
-}
-
-.signal-row {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin: 0 0 1.35rem;
-  width: fit-content;
-  max-width: 100%;
-}
-
-.signal-row__cell {
-  flex: 1 1 0;
-  width: auto;
-  min-width: 0;
-  aspect-ratio: 1;
-  height: auto;
-  background: #2a2a2a;
-  opacity: 0.06;
-  will-change: opacity, background;
 }
 
 .hero__blurb {

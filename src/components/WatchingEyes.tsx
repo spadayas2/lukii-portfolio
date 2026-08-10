@@ -97,7 +97,7 @@ export function WatchingEyes() {
       const wrap = eyeNodes.current.get(id)
       if (lid) lid.dataset.state = 'shut'
       if (wrap) wrap.dataset.state = 'leaving'
-      later(() => removeEye(id), 280)
+      later(() => removeEye(id), 850)
     }
 
     const spawn = () => {
@@ -117,17 +117,17 @@ export function WatchingEyes() {
       setEyes((prev) => [...prev, eye])
       ensureRaf()
 
-      // hold shut briefly, then blink open to rest
+      // hold shut, then slowly blink open to rest
       later(() => {
         const lid = lidNodes.current.get(id)
         const wrap = eyeNodes.current.get(id)
         if (wrap) wrap.dataset.state = 'watching'
         if (lid) lid.dataset.state = 'rest'
-      }, 120)
+      }, 280)
 
       later(() => {
         if (alive) blinkAway(id)
-      }, rand(1800, 4200))
+      }, rand(3200, 6200))
     }
 
     const scheduleSpawn = () => {
@@ -139,16 +139,15 @@ export function WatchingEyes() {
         }
         const slots = MAX_EYES - eyesRef.current.length
         if (slots > 0) {
-          // random burst of 1..remaining slots
           const count = 1 + Math.floor(Math.random() * slots)
           for (let i = 0; i < count; i++) {
             later(() => {
               if (alive && pageVisible) spawn()
-            }, i === 0 ? 0 : rand(160, 480))
+            }, i === 0 ? 0 : rand(400, 900))
           }
         }
         scheduleSpawn()
-      }, rand(1400, 3200))
+      }, rand(2200, 4800))
     }
 
     const onMove = (e: PointerEvent) => {

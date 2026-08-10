@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import heroArt from '../assets/hero.png'
-import { SignalRow } from './SignalRow'
 
 const ease = [0.16, 1, 0.3, 1] as const
 
@@ -26,7 +25,6 @@ export function Hero() {
           <h1 className="hero__brand" id="hero-brand">
             Lukii<span className="mark">.</span>
           </h1>
-          <SignalRow />
           <p className="hero__blurb">
             Creative systems, playable builds, and content ops — precision in the dark.
           </p>
