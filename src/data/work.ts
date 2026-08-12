@@ -20,6 +20,16 @@ export type GameItem = {
 
 export const games: GameItem[] = [
   {
+    id: 'orc-valley',
+    title: 'Valley of Trials',
+    blurb:
+      'WoW Classic–inspired orc starting zone in Three.js. Pick Warrior, Hunter, or Warlock — quest, level, and clear the canyon.',
+    stack: 'Three.js · TypeScript · Vite',
+    genre: 'Action RPG',
+    accent: '#c45c26',
+    playPath: '/games/orc-valley/',
+  },
+  {
     id: 'heatwave',
     title: 'HEATWAVE',
     blurb:

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚔</text></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valley of Trials</title>
+    <script type="module" crossorigin src="./assets/index-Csn_QhMk.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-asF-Juse.css">
+  </head>
+  <body>
+    <div id="game-root">
+      <canvas id="game-canvas"></canvas>
+
+      <div id="class-select">
+        <div class="class-select-panel">
+          <h1>Valley of Trials</h1>
+          <p class="lead">Choose your path, young blood of the Horde.</p>
+          <div class="class-grid">
+            <button type="button" class="class-card selected" data-class="warrior">
+              <div class="class-art warrior"></div>
+              <strong>Warrior</strong>
+              <span>Rage · Melee</span>
+            </button>
+            <button type="button" class="class-card" data-class="hunter">
+              <div class="class-art hunter"></div>
+              <strong>Hunter</strong>
+              <span>Focus · Ranged</span>
+            </button>
+            <button type="button" class="class-card" data-class="warlock">
+              <div class="class-art warlock"></div>
+              <strong>Warlock</strong>
+              <span>Mana · Melee + Spells</span>
+            </button>
+          </div>
+          <div id="class-detail"></div>
+          <button type="button" id="class-confirm">Enter the Valley</button>
+        </div>
+      </div>
+
+      <div id="hud" class="hidden">
+        <div id="player-frame">
+          <div class="portrait orc-portrait"></div>
+          <div class="bars">
+            <div class="name-row">
+              <span id="player-name">Thrak</span>
+              <span id="player-level">1</span>
+            </div>
+            <div class="bar hp"><div id="hp-fill"></div><span id="hp-text">100 / 100</span></div>
+            <div class="bar resource" id="resource-bar" data-resource="rage">
+              <div id="resource-fill"></div>
+              <span id="resource-text">0 / 100</span>
+            </div>
+            <div class="bar xp"><div id="xp-fill"></div><span id="xp-text">0 / 100 XP</span></div>
+          </div>
+        </div>
+
+        <div id="target-frame" class="hidden">
+          <div class="portrait mob-portrait"></div>
+          <div class="bars">
+            <div class="name-row">
+              <span id="target-name">—</span>
+              <span id="target-level">1</span>
+            </div>
+            <div class="bar hp"><div id="target-hp-fill"></div><span id="target-hp-text"></span></div>
+          </div>
+        </div>
+
+        <div id="quest-tracker">
+          <h3>Quest Log</h3>
+          <div id="quest-list"></div>
+        </div>
+
+        <div id="action-bar">
+          <div class="skill" data-slot="1" title="Skill 1">
+            <div class="key">1</div>
+            <div class="icon icon-heroic-strike"></div>
+            <div class="cd"></div>
+            <div class="cd-text"></div>
+          </div>
+          <div class="skill" data-slot="2" title="Skill 2">
+            <div class="key">2</div>
+            <div class="icon icon-charge"></div>
+            <div class="cd"></div>
+            <div class="cd-text"></div>
+          </div>
+          <div class="skill" data-slot="3" title="Skill 3">
+            <div class="key">3</div>
+            <div class="icon icon-rend"></div>
+            <div class="cd"></div>
+            <div class="cd-text"></div>
+          </div>
+          <div class="skill" data-slot="4" title="Skill 4">
+            <div class="key">4</div>
+            <div class="icon icon-battle-shout"></div>
+            <div class="cd"></div>
+            <div class="cd-text"></div>
+          </div>
+        </div>
+
+        <div id="combat-log"></div>
+        <div id="toast" class="hidden"></div>
+
+        <div id="dialog" class="hidden">
+          <div class="dialog-panel">
+            <h2 id="dialog-title"></h2>
+            <p id="dialog-body"></p>
+            <div id="dialog-actions"></div>
+            <button id="dialog-close" type="button">Goodbye</button>
+          </div>
+        </div>
+
+        <div id="help">
+          WASD move · Hold RMB look · LMB target · Tab cycle · E talk · 1–4 skills · Space jump
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
